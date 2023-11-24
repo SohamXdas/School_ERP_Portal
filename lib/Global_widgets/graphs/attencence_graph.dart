@@ -71,8 +71,14 @@ SizedBox attendenceGraph() {
             ),
           ),
         ),
-        Center(
-          child: Text('Dummy Data'),
+        const Center(
+          child: Text(
+            '73%',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
           //TODO: use the actuall attendence or syllabus data
         ),
       ],

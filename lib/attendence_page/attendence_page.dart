@@ -50,14 +50,45 @@ class AttendencePage extends StatelessWidget {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.only(),
+            padding: const EdgeInsets.only(left: 25, right: 25, top: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('data'),
-                const Text('data'),
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 4),
+                  child: Text(
+                    'Attendence',
+                    style: TextStyle(fontSize: 27.5, fontWeight: FontWeight.w700),
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+                RichText(
+                  text: const TextSpan(
+                    text: 'Summary ',
+                    style: TextStyle(
+                      fontSize: 27.5,
+                      fontWeight: FontWeight.w400,
+                    ), // Style for the first part of the text
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: 'for ',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 27.5, // Make this part bold
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'Half Yearly',
+                        style: TextStyle(
+                          fontSize: 27.5,
+                          fontWeight: FontWeight.w700,
+                        ), // Style for the rest of the text
+                      ),
+                    ],
+                  ),
+                ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 25, right: 15),
+                  padding: const EdgeInsets.only(top: 25, bottom: 25),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(18),
@@ -77,9 +108,9 @@ class AttendencePage extends StatelessWidget {
                         children: [
                           const Center(
                             child: Padding(
-                              padding: EdgeInsets.only(top: 10),
+                              padding: EdgeInsets.only(top: 10, bottom: 15),
                               child: Text(
-                                'Overall Performance',
+                                'Overall Attendance',
                                 style: TextStyle(
                                   fontSize: 29,
                                   fontWeight: FontWeight.w600,
@@ -88,7 +119,7 @@ class AttendencePage extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(right: 15),
+                            padding: const EdgeInsets.only(),
                             child: Container(
                               child: attendenceGraph(),
                             ),
@@ -100,7 +131,7 @@ class AttendencePage extends StatelessWidget {
                               children: [
                                 Container(
                                   child: const Padding(
-                                    padding: EdgeInsets.only(left: 0),
+                                    padding: EdgeInsets.only(left: 5),
                                     child: Row(
                                       children: [
                                         SizedBox(
@@ -113,7 +144,7 @@ class AttendencePage extends StatelessWidget {
                                         Padding(
                                           padding: EdgeInsets.only(left: 5),
                                           child: Text(
-                                            'Class Average',
+                                            'Your Attendence',
                                             style: TextStyle(
                                               fontSize: 15.5,
                                             ),
@@ -138,7 +169,7 @@ class AttendencePage extends StatelessWidget {
                                         Padding(
                                           padding: EdgeInsets.only(left: 5),
                                           child: Text(
-                                            'Your Performance',
+                                            'Class Attendence',
                                             style: TextStyle(
                                               fontSize: 15.5,
                                             ),
@@ -190,7 +221,10 @@ class AttendencePage extends StatelessWidget {
                   ],
                 ),
                 const Center(
-                  child: Button1(txt: 'Click for detailed Report'),
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 25),
+                    child: Button1(txt: 'Click for detailed Report'),
+                  ),
                 )
               ],
             ),
@@ -200,8 +234,3 @@ class AttendencePage extends StatelessWidget {
     );
   }
 }
-
-
-
-// Card(
-//                      
