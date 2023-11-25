@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 //! button1
@@ -86,6 +88,80 @@ class Button3 extends StatelessWidget {
           style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w900,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+//!button4
+class Button4 extends StatelessWidget {
+  final String whichUnit;
+  final Color buttonColor;
+  final Color textColor;
+  const Button4({
+    super.key,
+    required this.whichUnit,
+    required this.buttonColor,
+    required this.textColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 60,
+      height: 60,
+      decoration: BoxDecoration(
+        color: buttonColor,
+        borderRadius: BorderRadius.circular(35),
+      ),
+      child: Center(
+        child: Text(
+          whichUnit,
+          style: TextStyle(
+            color: textColor,
+            fontSize: 20,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+//!button5
+class Button5 extends StatelessWidget {
+  final String txt;
+  final double height;
+  final double width;
+  final Color buttonColor;
+  final Color textColor;
+  const Button5({
+    super.key,
+    required this.txt,
+    required this.height,
+    required this.width,
+    required this.buttonColor,
+    required this.textColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: height,
+      width: width,
+      decoration: BoxDecoration(
+        color: buttonColor,
+        borderRadius: BorderRadius.circular(66),
+      ),
+      child: Center(
+        child: Text(
+          txt,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 18.5,
+            color: textColor,
           ),
         ),
       ),
