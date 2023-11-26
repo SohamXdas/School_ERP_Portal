@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 //! button1
@@ -100,18 +98,22 @@ class Button4 extends StatelessWidget {
   final String whichUnit;
   final Color buttonColor;
   final Color textColor;
+  final double height;
+  final double width;
   const Button4({
     super.key,
     required this.whichUnit,
     required this.buttonColor,
     required this.textColor,
+    required this.height,
+    required this.width,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 60,
-      height: 60,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
         color: buttonColor,
         borderRadius: BorderRadius.circular(35),
@@ -122,7 +124,7 @@ class Button4 extends StatelessWidget {
           style: TextStyle(
             color: textColor,
             fontSize: 20,
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.w800,
           ),
         ),
       ),
