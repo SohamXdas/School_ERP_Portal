@@ -41,7 +41,7 @@ SizedBox preformance_overview_graph() {
           ),
           LineChartBarData(
             spots: [
-              FlSpot(0, 30),
+              FlSpot(0, 70),
               FlSpot(1, 50),
               FlSpot(2, 70),
               FlSpot(3, 60),
@@ -51,7 +51,7 @@ SizedBox preformance_overview_graph() {
             ],
             isStrokeCapRound: true,
             isStrokeJoinRound: true,
-            curveSmoothness: 0.32,
+            curveSmoothness: 0.4,
             dotData: FlDotData(show: false),
             color: Color.fromRGBO(231, 63, 118, 1),
             isCurved: true,

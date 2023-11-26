@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   fl_chart: ^0.64.0
+  flutter_svg: ^2.0.9
   # firebase_core: ^2.21.0
   # firebase_auth: ^4.12.1
   # cloud_firestore: ^4.12.2
@@ -75,6 +76,8 @@ flutter:
     - assets/images/icons/syllabus.png
     - assets/images/icons/timetable.png
     - assets/images/icons/troubleshoot.png
+    - assets/images/icons/marks_rpt.png
+    - assets/images/icons/marks_rpt.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
