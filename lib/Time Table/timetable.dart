@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:student/Global_widgets/buttons.dart';
 import 'package:student/appbar_global/drawer.dart';
-import 'package:student/appbar_global/appbar.dart';
-import 'package:student/Global_widgets/graphs/performance_graphs.dart';
-import 'package:student/Global_widgets/graphs/syllabus_graph.dart';
 
 class Timetable extends StatelessWidget {
   const Timetable({super.key});
