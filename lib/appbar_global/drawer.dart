@@ -4,7 +4,7 @@ import 'package:student/appbar_global/header_drawer.dart';
 
 Drawer drawer() {
   return Drawer(
-    backgroundColor: const Color.fromRGBO(6, 11, 29, 1),
+    backgroundColor: const Color.fromRGBO(1, 1, 20, 1),
     child: Padding(
       padding: const EdgeInsets.only(left: 20),
       child: Column(
@@ -30,7 +30,7 @@ Drawer drawer() {
                   splashRadius: 150,
                   splashColor: const Color.fromRGBO(105, 86, 229, 0.1),
                   icon: Transform.scale(
-                    scale: 6,
+                    scale: 1,
                     child: Image.asset(
                       'assets/images/icons/troubleshoot.png',
                       colorBlendMode: BlendMode.lighten,

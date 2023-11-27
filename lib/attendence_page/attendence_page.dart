@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:student/Global_widgets/buttons.dart';
 import 'package:student/Global_widgets/graphs/attencence_graph.dart';
+import 'package:student/appbar_global/appbar.dart';
 import 'package:student/appbar_global/drawer.dart';
 
 class AttendencePage extends StatelessWidget {
@@ -14,7 +15,7 @@ class AttendencePage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         title: const Text(
-          'Attendence report',
+          'Attendence Report',
           style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
         ),
         actions: [
