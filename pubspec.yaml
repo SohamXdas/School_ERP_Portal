@@ -76,6 +76,7 @@ flutter:
     - assets/images/icons/syllabus.png
     - assets/images/icons/timetable.png
     - assets/images/icons/troubleshoot.png
+    - assets/images/icons/question_bank_search.png
     - assets/images/icons/marks_rpt.svg
     - assets/images/icons/time_table.svg
 
