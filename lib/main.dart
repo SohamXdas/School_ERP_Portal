@@ -8,6 +8,7 @@ import 'package:student/Specific_subject_pages/maths_detailed_marks_page.dart';
 // import 'package:student/attendence_page/attendence_page.dart';
 import 'package:student/Time%20Table/timetable.dart';
 import 'package:student/attendence_page/attendence_page.dart';
+import 'package:student/carrier_counsilling_page/carrier_counsilling_page.dart';
 import 'package:student/question_bank_page/question_bank_page.dart';
 
 void main() {
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color.fromRGBO(6, 11, 29, 1),
         ),
       ),
-      home: const QuestionBankPage(),
+      home: const CarrierCounsilling(),
     );
   }
 }
