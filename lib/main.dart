@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color.fromRGBO(6, 11, 29, 1),
         ),
       ),
-      home: const CarrierCounsilling(),
+      home: CarrierCounsilling(),
     );
   }
 }

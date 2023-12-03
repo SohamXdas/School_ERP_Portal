@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:student/Global_widgets/buttons.dart';
 import 'package:student/Global_widgets/graphs/performance_graphs.dart';
 import 'package:student/appbar_global/drawer.dart';
+import 'package:student/carrier_counsilling_page/Star_mentor_cards_pages/mentor_1.dart';
+import 'package:student/carrier_counsilling_page/Star_mentor_cards_pages/mentor_2.dart';
+import 'package:student/carrier_counsilling_page/Star_mentor_cards_pages/mentor_3.dart';
+import 'package:student/carrier_counsilling_page/Star_mentor_cards_pages/mentor_4.dart';
+import 'package:student/carrier_counsilling_page/Star_mentor_cards_pages/mentor_5.dart';
 
 class CarrierCounsilling extends StatelessWidget {
-  const CarrierCounsilling({super.key});
+  CarrierCounsilling({super.key});
+  final _controller = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -55,9 +62,18 @@ class CarrierCounsilling extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Star Mentors'),
+                const Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Text(
+                    'Star Mentors',
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
                 Padding(
-                  padding: const EdgeInsets.only(),
+                  padding: const EdgeInsets.only(top: 10, bottom: 20),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(18),
@@ -70,101 +86,60 @@ class CarrierCounsilling extends StatelessWidget {
                         )
                       ],
                     ),
-                    child: Card(
-                      elevation: 0,
-                      color: const Color.fromRGBO(6, 11, 29, 1),
-                      child: Column(
-                        children: [
-                          const Center(
-                            child: Padding(
-                              padding: EdgeInsets.only(top: 10),
-                              child: Text(
-                                'Overall Performance',
-                                style: TextStyle(
-                                  fontSize: 29,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 15),
-                            child: Container(
-                              child: preformance_overview_graph(),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 20, bottom: 20),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Container(
-                                  child: const Padding(
-                                    padding: EdgeInsets.only(left: 0),
-                                    child: Row(
-                                      children: [
-                                        SizedBox(
-                                          height: 12,
-                                          width: 12,
-                                          child: ColoredBox(
-                                            color: Color.fromRGBO(50, 47, 200, 1),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 5),
-                                          child: Text(
-                                            'Class Average',
-                                            style: TextStyle(
-                                              fontSize: 15.5,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  child: const Padding(
-                                    padding: EdgeInsets.only(right: 0),
-                                    child: Row(
-                                      children: [
-                                        SizedBox(
-                                          height: 12,
-                                          width: 12,
-                                          child: ColoredBox(
-                                            color: Color.fromRGBO(231, 63, 118, 1),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 5),
-                                          child: Text(
-                                            'Your Performance',
-                                            style: TextStyle(
-                                              fontSize: 15.5,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
+                    child: Stack(
+                      alignment: AlignmentDirectional.bottomCenter,
+                      children: [
+                        Center(
+                          child: SizedBox(
+                            height: 290,
+                            width: 300,
+                            child: PageView(
+                              controller: _controller,
+                              children: const [
+                                Mentor1(),
+                                Mentor5(),
+                                Mentor4(),
+                                Mentor2(),
+                                Mentor3(),
                               ],
                             ),
-                          )
-                        ],
-                      ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: SmoothPageIndicator(
+                            controller: _controller,
+                            count: 5,
+                            effect: const JumpingDotEffect(
+                              dotHeight: 10,
+                              dotWidth: 15,
+                              dotColor: Color.fromRGBO(240, 238, 255, 1),
+                              verticalOffset: 4.5,
+                            ),
+                          ),
+                        )
+                      ],
                     ),
                   ),
                 ),
-                Text('Search by field '),
-                //! NN
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 10),
+                  child: Text(
+                    'Search by field',
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+                //! Names
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Row(
                       children: [
                         InkWell(
-                          splashColor: Color.fromARGB(204, 189, 189, 255),
+                          splashColor: const Color.fromARGB(204, 189, 189, 255),
                           borderRadius: BorderRadius.circular(10),
                           onTap: () {
                             //TODO go to detailed marks page
@@ -177,11 +152,11 @@ class CarrierCounsilling extends StatelessWidget {
                             textColor: Color.fromRGBO(6, 11, 29, 1),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
                         InkWell(
-                          splashColor: Color.fromARGB(204, 189, 189, 255),
+                          splashColor: const Color.fromARGB(204, 189, 189, 255),
                           borderRadius: BorderRadius.circular(10),
                           onTap: () {
                             //TODO go to detailed marks page
@@ -196,13 +171,13 @@ class CarrierCounsilling extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 12,
                     ),
                     Row(
                       children: [
                         InkWell(
-                          splashColor: Color.fromARGB(204, 189, 189, 255),
+                          splashColor: const Color.fromARGB(204, 189, 189, 255),
                           borderRadius: BorderRadius.circular(10),
                           onTap: () {
                             //TODO go to detailed marks page
@@ -215,11 +190,11 @@ class CarrierCounsilling extends StatelessWidget {
                             textColor: Color.fromRGBO(6, 11, 29, 1),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
                         InkWell(
-                          splashColor: Color.fromARGB(204, 189, 189, 255),
+                          splashColor: const Color.fromARGB(204, 189, 189, 255),
                           borderRadius: BorderRadius.circular(10),
                           onTap: () {
                             //TODO go to detailed marks page
@@ -234,13 +209,13 @@ class CarrierCounsilling extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 12,
                     ),
                     Row(
                       children: [
                         InkWell(
-                          splashColor: Color.fromARGB(204, 189, 189, 255),
+                          splashColor: const Color.fromARGB(204, 189, 189, 255),
                           borderRadius: BorderRadius.circular(10),
                           onTap: () {
                             //TODO go to detailed marks page
@@ -253,11 +228,11 @@ class CarrierCounsilling extends StatelessWidget {
                             textColor: Color.fromRGBO(6, 11, 29, 1),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
                         InkWell(
-                          splashColor: Color.fromARGB(204, 189, 189, 255),
+                          splashColor: const Color.fromARGB(204, 189, 189, 255),
                           borderRadius: BorderRadius.circular(10),
                           onTap: () {
                             //TODO go to detailed marks page

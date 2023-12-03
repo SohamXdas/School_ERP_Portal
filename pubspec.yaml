@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   fl_chart: ^0.64.0
   flutter_svg: ^2.0.9
+  smooth_page_indicator: ^1.1.0
   # firebase_core: ^2.21.0
   # firebase_auth: ^4.12.1
   # cloud_firestore: ^4.12.2
@@ -77,6 +78,11 @@ flutter:
     - assets/images/icons/timetable.png
     - assets/images/icons/troubleshoot.png
     - assets/images/icons/question_bank_search.png
+    - assets/images/icons/councl_1.png
+    - assets/images/icons/councl_2.png
+    - assets/images/icons/councl_3.png
+    - assets/images/icons/councl_4.png
+    - assets/images/icons/councl_5.png
     - assets/images/icons/marks_rpt.svg
     - assets/images/icons/time_table.svg
 
