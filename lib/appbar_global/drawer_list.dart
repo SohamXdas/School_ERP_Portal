@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:student/Home%20page/home_page.dart';
+import 'package:student/Preformance_report_page/detailed_performance_report_page.dart';
+import 'package:student/Time%20Table/timetable.dart';
+import 'package:student/attendence_page/attendence_page.dart';
+import 'package:student/carrier_counsilling_page/carrier_counsilling_page.dart';
 
 class DrawerList extends StatefulWidget {
   const DrawerList({super.key});
@@ -15,10 +20,15 @@ class _DrawerListState extends State<DrawerList> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // TODO: Home Button
           TextButton(
             onPressed: () {
-              // TODO: Go to Homepage
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const Homepage();
+                  },
+                ),
+              );
             },
             child: Row(
               children: [
@@ -44,10 +54,15 @@ class _DrawerListState extends State<DrawerList> {
               ],
             ),
           ),
-          //TODO: Performance button
           TextButton(
             onPressed: () {
-              // TODO: Go to performmance page
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const PerformanceReportPage();
+                  },
+                ),
+              );
             },
             child: Row(
               children: [
@@ -73,10 +88,15 @@ class _DrawerListState extends State<DrawerList> {
               ],
             ),
           ),
-          //TODO: Attendence button
           TextButton(
             onPressed: () {
-              // TODO: Go to attendence page
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const AttendencePage();
+                  },
+                ),
+              );
             },
             child: Row(
               children: [
@@ -106,6 +126,13 @@ class _DrawerListState extends State<DrawerList> {
           TextButton(
             onPressed: () {
               // TODO: Go to Carrer_Councilling page
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return CarrierCounsilling();
+                  },
+                ),
+              );
             },
             child: Row(
               children: [
@@ -131,11 +158,8 @@ class _DrawerListState extends State<DrawerList> {
               ],
             ),
           ),
-          //TODO: Question bank button
           TextButton(
-            onPressed: () {
-              // TODO: Go to question_Bank page
-            },
+            onPressed: () {},
             child: Row(
               children: [
                 SizedBox(
@@ -160,10 +184,9 @@ class _DrawerListState extends State<DrawerList> {
               ],
             ),
           ),
-          //TODO: Syllabus button
           TextButton(
             onPressed: () {
-              // TODO: Go to Syllabus page
+              // TODO: make Silla bs page
             },
             child: Row(
               children: [
@@ -189,10 +212,15 @@ class _DrawerListState extends State<DrawerList> {
               ],
             ),
           ),
-          //TODO: Time table button
           TextButton(
             onPressed: () {
-              // TODO: Go to Time_table page
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const Timetable();
+                  },
+                ),
+              );
             },
             child: Row(
               children: [

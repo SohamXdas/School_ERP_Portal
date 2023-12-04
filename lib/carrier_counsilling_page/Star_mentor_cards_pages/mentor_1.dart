@@ -67,7 +67,9 @@ class Mentor1 extends StatelessWidget {
             InkWell(
               splashColor: const Color.fromARGB(204, 189, 189, 255),
               borderRadius: BorderRadius.circular(10),
-              onTap: () {},
+              onTap: () {
+                //TODO go to page
+              },
               child: const Button5(
                 txt: 'Book a Meeting',
                 height: 48,

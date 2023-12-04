@@ -1,7 +1,6 @@
-// ignore_for_file: avoid_unnecessary_containers
-
 import 'package:flutter/material.dart';
 import 'package:student/Global_widgets/buttons.dart';
+import 'package:student/Preformance_report_page/detailed_performance_report_page.dart';
 import 'package:student/appbar_global/drawer.dart';
 import 'package:student/appbar_global/appbar.dart';
 import 'package:student/Global_widgets/graphs/performance_graphs.dart';
@@ -167,7 +166,13 @@ class Homepage extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 65, right: 65, top: 25),
                   child: InkWell(
                     onTap: () {
-                      //TODO go to detailed page
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const PerformanceReportPage();
+                          },
+                        ),
+                      );
                     },
                     splashColor: const Color.fromRGBO(136, 136, 255, 0.8),
                     borderRadius: BorderRadius.circular(15),
@@ -221,29 +226,27 @@ class Homepage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        onTap: () {
-                          // TODO Changes on tap
-                        },
-                        child: const Padding(
-                          padding: EdgeInsets.only(right: 26),
-                          child: Button2(
+                      Padding(
+                        padding: const EdgeInsets.only(right: 26),
+                        child: InkWell(
+                          onTap: () {
+                            //TODO add footer widget
+                          },
+                          child: const Button2(
                             yesorno: 'Yes',
-                            color: const Color.fromRGBO(136, 136, 255, 1),
+                            color: Color.fromRGBO(136, 136, 255, 1),
                           ),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        onTap: () {
-                          // TODO Changes on tap
-                        },
-                        child: const Padding(
-                          padding: EdgeInsets.only(left: 26),
-                          child: Button2(
+                      Padding(
+                        padding: const EdgeInsets.only(left: 26),
+                        child: InkWell(
+                          onTap: () {
+                            //TODO add footer widget
+                          },
+                          child: const Button2(
                             yesorno: 'No',
-                            color: const Color.fromRGBO(76, 79, 92, 1),
+                            color: Color.fromRGBO(76, 79, 92, 1),
                           ),
                         ),
                       )
@@ -286,7 +289,6 @@ class Homepage extends StatelessWidget {
                                 child: syllabusGraph(),
                               ),
                             ),
-                            // TODO Need to optimize use function and pass the text
                             Padding(
                               padding: const EdgeInsets.only(top: 15, bottom: 20),
                               child: Row(
@@ -339,7 +341,14 @@ class Homepage extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 65, right: 65, top: 25, bottom: 50),
                   child: InkWell(
                     onTap: () {
-                      //TODO go to detailed page
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(
+                      //     builder: (context) {
+                      //       return const PerformanceReportPage();
+                      //     },
+                      //   ),
+                      // );
+                      //! TODO Make sillabus page
                     },
                     splashColor: const Color.fromRGBO(136, 136, 255, 0.8),
                     borderRadius: BorderRadius.circular(15),

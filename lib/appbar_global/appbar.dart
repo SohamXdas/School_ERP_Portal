@@ -47,6 +47,7 @@ class appbar_1 extends StatelessWidget {
 AppBar appbar() {
   return AppBar(
     //TODO add forceMaterialTransparency: true, to all the app bars
+    forceMaterialTransparency: true,
     elevation: 0,
     title: const Text(
       'Progress report',
