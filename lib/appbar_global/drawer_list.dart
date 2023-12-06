@@ -4,6 +4,7 @@ import 'package:student/Preformance_report_page/detailed_performance_report_page
 import 'package:student/Time%20Table/timetable.dart';
 import 'package:student/attendence_page/attendence_page.dart';
 import 'package:student/carrier_counsilling_page/carrier_counsilling_page.dart';
+import 'package:student/question_bank_page/question_bank_page.dart';
 
 class DrawerList extends StatefulWidget {
   const DrawerList({super.key});
@@ -122,10 +123,8 @@ class _DrawerListState extends State<DrawerList> {
               ],
             ),
           ),
-          //TODO: CarrerCouncilling button
           TextButton(
             onPressed: () {
-              // TODO: Go to Carrer_Councilling page
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
@@ -159,7 +158,15 @@ class _DrawerListState extends State<DrawerList> {
             ),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const QuestionBankPage();
+                  },
+                ),
+              );
+            },
             child: Row(
               children: [
                 SizedBox(

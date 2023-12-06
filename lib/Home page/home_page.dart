@@ -1,10 +1,12 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:student/Global_widgets/buttons.dart';
 import 'package:student/Preformance_report_page/detailed_performance_report_page.dart';
 import 'package:student/appbar_global/drawer.dart';
-import 'package:student/appbar_global/appbar.dart';
 import 'package:student/Global_widgets/graphs/performance_graphs.dart';
 import 'package:student/Global_widgets/graphs/syllabus_graph.dart';
+import 'package:student/notification_page/notification_page.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -14,9 +16,50 @@ class Homepage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(6, 11, 29, 1),
       endDrawer: drawer(),
-      appBar: appbar(),
+      appBar: AppBar(
+        forceMaterialTransparency: true,
+        elevation: 0,
+        title: const Text(
+          'Home Page',
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const NotificationPage();
+                  },
+                ),
+              );
+            },
+            icon: const Icon(
+              Icons.notifications,
+              size: 30,
+            ),
+          ),
+        ],
+        leading: Builder(
+          builder: (BuildContext context) {
+            return Padding(
+              padding: const EdgeInsets.only(left: 25, right: 8, top: 3),
+              child: IconButton(
+                icon: Transform.scale(
+                  scale: 6.2,
+                  child: Image.asset(
+                    'assets/images/icons/Drawer_icon.png',
+                  ),
+                ),
+                onPressed: () {
+                  Scaffold.of(context).openEndDrawer();
+                },
+              ),
+            );
+          },
+        ),
+      ),
       body: ListView(
-        // this is the entire page's(used foor scrolling)
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 25, right: 20, top: 22),
@@ -229,6 +272,8 @@ class Homepage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(right: 26),
                         child: InkWell(
+                          splashColor: const Color.fromRGBO(136, 136, 255, 0.8),
+                          borderRadius: BorderRadius.circular(8),
                           onTap: () {
                             //TODO add footer widget
                           },
@@ -241,6 +286,8 @@ class Homepage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 26),
                         child: InkWell(
+                          splashColor: const Color.fromRGBO(76, 79, 92, 1),
+                          borderRadius: BorderRadius.circular(8),
                           onTap: () {
                             //TODO add footer widget
                           },

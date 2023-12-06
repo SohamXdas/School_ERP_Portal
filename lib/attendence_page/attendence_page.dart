@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:student/Global_widgets/buttons.dart';
 import 'package:student/Global_widgets/graphs/attencence_graph.dart';
-import 'package:student/appbar_global/appbar.dart';
 import 'package:student/appbar_global/drawer.dart';
 
 class AttendencePage extends StatelessWidget {

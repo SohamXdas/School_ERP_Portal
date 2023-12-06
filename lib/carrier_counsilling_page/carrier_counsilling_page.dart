@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:student/Global_widgets/buttons.dart';
-import 'package:student/Global_widgets/graphs/performance_graphs.dart';
 import 'package:student/appbar_global/drawer.dart';
 import 'package:student/carrier_counsilling_page/Star_mentor_cards_pages/mentor_1.dart';
 import 'package:student/carrier_counsilling_page/Star_mentor_cards_pages/mentor_2.dart';

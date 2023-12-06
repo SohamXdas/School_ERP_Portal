@@ -85,6 +85,7 @@ flutter:
     - assets/images/icons/councl_5.png
     - assets/images/icons/marks_rpt.svg
     - assets/images/icons/time_table.svg
+    - assets/images/icons/no_notifications.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
