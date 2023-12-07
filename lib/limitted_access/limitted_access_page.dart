@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:student/appbar_global/drawer.dart';
 
 class LimitedAccessPage extends StatelessWidget {
@@ -8,7 +9,7 @@ class LimitedAccessPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(6, 11, 29, 1),
-      endDrawer: drawer(),
+      endDrawer: const drawer(),
       appBar: AppBar(
         forceMaterialTransparency: true,
         elevation: 0,
@@ -46,7 +47,41 @@ class LimitedAccessPage extends StatelessWidget {
           },
         ),
       ),
-      body: ListView(),
+      body: ListView(
+        children: [
+          const SizedBox(
+            height: 70,
+          ),
+          SizedBox(
+            height: 270,
+            width: 200,
+            child: SvgPicture.asset('assets/images/icons/oops.svg'),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: 10, right: 10),
+            child: Text(
+              'This is a demo product\n Contact us at dsoham202@gmail.com\nfor more info. Get ready for\nan enhanced educational experience!',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: SvgPicture.asset('assets/images/icons/notification_pop_button.svg'),
+          ),
+        ],
+      ),
     );
   }
 }

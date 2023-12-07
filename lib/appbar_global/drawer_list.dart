@@ -5,6 +5,7 @@ import 'package:student/Time%20Table/timetable.dart';
 import 'package:student/attendence_page/attendence_page.dart';
 import 'package:student/carrier_counsilling_page/carrier_counsilling_page.dart';
 import 'package:student/question_bank_page/question_bank_page.dart';
+import 'package:student/sillabus_page/sillabus_page.dart';
 
 class DrawerList extends StatefulWidget {
   const DrawerList({super.key});
@@ -193,7 +194,13 @@ class _DrawerListState extends State<DrawerList> {
           ),
           TextButton(
             onPressed: () {
-              // TODO: make Silla bs page
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const SillabusPage();
+                  },
+                ),
+              );
             },
             child: Row(
               children: [
