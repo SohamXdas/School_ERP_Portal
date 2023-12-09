@@ -1,16 +1,23 @@
 // ignore_for_file: avoid_unnecessary_containers
 
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:student/Global_widgets/buttons.dart';
 import 'package:student/Preformance_report_page/detailed_performance_report_page.dart';
 import 'package:student/appbar_global/drawer.dart';
 import 'package:student/Global_widgets/graphs/performance_graphs.dart';
-import 'package:student/Global_widgets/graphs/syllabus_graph.dart';
 import 'package:student/notification_page/notification_page.dart';
+import 'package:student/sillabus_page/sillabus_page.dart';
 
-class Homepage extends StatelessWidget {
+class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  double syllabuscompleate = 82.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -333,7 +340,70 @@ class Homepage extends StatelessWidget {
                             Container(
                               child: Padding(
                                 padding: const EdgeInsets.only(top: 20, bottom: 15),
-                                child: syllabusGraph(),
+                                child: SizedBox(
+                                  height: 185,
+                                  width: 185,
+                                  child: Stack(
+                                    children: [
+                                      PieChart(
+                                        PieChartData(
+                                          startDegreeOffset: 90,
+                                          sections: [
+                                            PieChartSectionData(
+                                              value: syllabuscompleate,
+                                              color: const Color.fromRGBO(136, 136, 255, 1),
+                                              showTitle: false,
+                                              borderSide: BorderSide.none,
+                                              radius: 20,
+                                            ),
+                                            PieChartSectionData(
+                                              value: 100 - syllabuscompleate,
+                                              color: const Color.fromRGBO(44, 48, 63, 1),
+                                              showTitle: false,
+                                              borderSide: BorderSide.none,
+                                              radius: 20,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Center(
+                                        child: SizedBox(
+                                          width: 108,
+                                          height: 108,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                width: 2,
+                                                color: const Color.fromRGBO(136, 136, 255, 1),
+                                              ),
+                                              borderRadius: BorderRadius.circular(80),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      // TODO Animations
+                                      Center(
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(left: 8),
+                                              child: Text(
+                                                '$syllabuscompleate%',
+                                                style: const TextStyle(fontSize: 15),
+                                              ),
+                                            ),
+                                            const Text(
+                                              'Completed',
+                                              style: TextStyle(fontSize: 15),
+                                            ),
+                                          ],
+                                        ),
+                                        //TODO: use the actuall attendence or syllabus data
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ),
                             ),
                             Padding(
@@ -346,7 +416,9 @@ class Homepage extends StatelessWidget {
                                     radius: 90,
                                     borderRadius: BorderRadius.circular(12),
                                     onTap: () {
-                                      // TODO Need to Change graph
+                                      setState(() {
+                                        syllabuscompleate = 82.0;
+                                      });
                                     },
                                     //! splash effect
                                     child: const Button3(
@@ -358,7 +430,9 @@ class Homepage extends StatelessWidget {
                                     radius: 90,
                                     borderRadius: BorderRadius.circular(12),
                                     onTap: () {
-                                      // TODO Need to Change graph
+                                      setState(() {
+                                        syllabuscompleate = 66.0;
+                                      });
                                     },
                                     child: const Button3(
                                       whichUnit: 'U2',
@@ -369,7 +443,9 @@ class Homepage extends StatelessWidget {
                                     radius: 90,
                                     borderRadius: BorderRadius.circular(12),
                                     onTap: () {
-                                      // TODO Need to Change graph
+                                      setState(() {
+                                        syllabuscompleate = 48.0;
+                                      });
                                     },
                                     child: const Button3(
                                       whichUnit: 'U3',
@@ -388,14 +464,13 @@ class Homepage extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 65, right: 65, top: 25, bottom: 50),
                   child: InkWell(
                     onTap: () {
-                      // Navigator.of(context).push(
-                      //   MaterialPageRoute(
-                      //     builder: (context) {
-                      //       return const PerformanceReportPage();
-                      //     },
-                      //   ),
-                      // );
-                      //! TODO Make sillabus page
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const SillabusPage();
+                          },
+                        ),
+                      );
                     },
                     splashColor: const Color.fromRGBO(136, 136, 255, 0.8),
                     borderRadius: BorderRadius.circular(15),

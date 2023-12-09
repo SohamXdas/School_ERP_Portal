@@ -38,6 +38,7 @@ dependencies:
   fl_chart: ^0.64.0
   flutter_svg: ^2.0.9
   smooth_page_indicator: ^1.1.0
+  provider: ^6.1.1
   # firebase_core: ^2.21.0
   # firebase_auth: ^4.12.1
   # cloud_firestore: ^4.12.2
