@@ -1,11 +1,9 @@
 // ignore_for_file: avoid_unnecessary_containers
 
-import 'dart:ffi';
-
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:student/Global_widgets/buttons.dart';
-import 'package:student/Global_widgets/graphs/syllabus_graph.dart';
+
 // import 'package:flutter_svg/svg.dart';
 // import 'package:student/appbar_global/appbar.dart';
 import 'package:student/appbar_global/drawer.dart';

@@ -1,16 +1,25 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:student/Global_widgets/buttons.dart';
-import 'package:student/Global_widgets/graphs/attencence_graph.dart';
 import 'package:student/appbar_global/drawer.dart';
+import 'package:student/limitted_access/limitted_access_page.dart';
+import 'package:student/notification_page/notification_page.dart';
 
-class AttendencePage extends StatelessWidget {
+class AttendencePage extends StatefulWidget {
   const AttendencePage({super.key});
 
+  @override
+  State<AttendencePage> createState() => _AttendencePageState();
+}
+
+class _AttendencePageState extends State<AttendencePage> {
+  double attendence = 73;
+  double classavg1 = 49.5;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(6, 11, 29, 1),
-      endDrawer: drawer(),
+      endDrawer: const drawer(),
       appBar: AppBar(
         elevation: 0,
         title: const Text(
@@ -20,7 +29,13 @@ class AttendencePage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              // TODO: Go to notification page
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const NotificationPage();
+                  },
+                ),
+              );
             },
             icon: const Icon(
               Icons.notifications,
@@ -121,7 +136,88 @@ class AttendencePage extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(),
                             child: Container(
-                              child: attendenceGraph(),
+                              child: SizedBox(
+                                height: 185,
+                                width: 185,
+                                child: Stack(
+                                  children: [
+                                    PieChart(
+                                      PieChartData(
+                                        startDegreeOffset: 90,
+                                        sections: [
+                                          PieChartSectionData(
+                                            value: attendence,
+                                            color: const Color.fromRGBO(136, 136, 255, 1),
+                                            showTitle: false,
+                                            borderSide: BorderSide.none,
+                                            radius: 20,
+                                          ),
+                                          PieChartSectionData(
+                                            value: 100 - attendence,
+                                            color: const Color.fromRGBO(44, 48, 63, 1),
+                                            showTitle: false,
+                                            borderSide: BorderSide.none,
+                                            radius: 20,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    PieChart(
+                                      PieChartData(
+                                        startDegreeOffset: 90,
+                                        sections: [
+                                          PieChartSectionData(
+                                            value: classavg1,
+                                            color: Colors.transparent,
+                                            showTitle: false,
+                                            borderSide: BorderSide.none,
+                                            radius: 20,
+                                          ),
+                                          PieChartSectionData(
+                                            value: 3,
+                                            color: const Color.fromRGBO(149, 2, 2, 1),
+                                            showTitle: false,
+                                            borderSide: BorderSide.none,
+                                            radius: 20,
+                                          ),
+                                          PieChartSectionData(
+                                            value: 100 - (classavg1 + 3),
+                                            color: Colors.transparent,
+                                            showTitle: false,
+                                            borderSide: BorderSide.none,
+                                            radius: 20,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Center(
+                                      child: SizedBox(
+                                        width: 108,
+                                        height: 108,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            border: Border.all(
+                                              width: 2,
+                                              color: const Color.fromRGBO(136, 136, 255, 1),
+                                            ),
+                                            borderRadius: BorderRadius.circular(80),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Center(
+                                      child: Text(
+                                        '$attendence%',
+                                        style: const TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      //TODO: use the actuall attendence or syllabus data
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
                           Padding(
@@ -195,7 +291,12 @@ class AttendencePage extends StatelessWidget {
                       splashColor: Colors.white38,
                       radius: 90,
                       borderRadius: BorderRadius.circular(12),
-                      onTap: () {},
+                      onTap: () {
+                        setState(() {
+                          attendence = 73.0;
+                          classavg1 = 49.5;
+                        });
+                      },
                       child: const Button3(
                         whichUnit: '1M',
                       ),
@@ -204,7 +305,12 @@ class AttendencePage extends StatelessWidget {
                       splashColor: Colors.white38,
                       radius: 90,
                       borderRadius: BorderRadius.circular(12),
-                      onTap: () {},
+                      onTap: () {
+                        setState(() {
+                          attendence = 70.0;
+                          classavg1 = 60.5;
+                        });
+                      },
                       child: const Button3(
                         whichUnit: '3M',
                       ),
@@ -213,17 +319,35 @@ class AttendencePage extends StatelessWidget {
                       splashColor: Colors.white38,
                       radius: 90,
                       borderRadius: BorderRadius.circular(12),
-                      onTap: () {},
+                      onTap: () {
+                        setState(() {
+                          attendence = 82.0;
+                          classavg1 = 68.5;
+                        });
+                      },
                       child: const Button3(
                         whichUnit: '6M',
                       ),
                     ),
                   ],
                 ),
-                const Center(
+                Center(
                   child: Padding(
-                    padding: EdgeInsets.only(top: 25),
-                    child: Button1(txt: 'Click for detailed Report'),
+                    padding: const EdgeInsets.only(top: 25),
+                    child: InkWell(
+                      splashColor: Colors.white38,
+                      borderRadius: BorderRadius.circular(12),
+                      onDoubleTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const LimitedAccessPage();
+                            },
+                          ),
+                        );
+                      },
+                      child: const Button1(txt: 'Click for detailed Report'),
+                    ),
                   ),
                 )
               ],
