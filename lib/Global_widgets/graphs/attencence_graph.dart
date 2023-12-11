@@ -79,7 +79,7 @@ SizedBox attendenceGraph() {
               fontWeight: FontWeight.w500,
             ),
           ),
-          //TODO: use the actuall attendence or syllabus data
+          //*use the actuall attendence or syllabus data
         ),
       ],
     ),

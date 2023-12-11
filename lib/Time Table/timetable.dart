@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:student/Global_widgets/buttons.dart';
 import 'package:student/appbar_global/drawer.dart';
+import 'package:student/notification_page/notification_page.dart';
 
 class Timetable extends StatelessWidget {
   const Timetable({super.key});
@@ -10,8 +11,9 @@ class Timetable extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(6, 11, 29, 1),
-      endDrawer: drawer(),
+      endDrawer: const drawer(),
       appBar: AppBar(
+        forceMaterialTransparency: true,
         elevation: 0,
         title: const Text(
           'Time Table',
@@ -20,7 +22,13 @@ class Timetable extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              // TODO: Go to notification page
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const NotificationPage();
+                  },
+                ),
+              );
             },
             icon: const Icon(
               Icons.notifications,

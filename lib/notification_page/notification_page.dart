@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:student/appbar_global/drawer.dart';
 
-//! TODO add this page navigation to all the appbars (Fuckinggg hellll!!)
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});
 
@@ -10,7 +9,7 @@ class NotificationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(6, 11, 29, 1),
-      endDrawer: drawer(),
+      endDrawer: const drawer(),
       appBar: AppBar(
         forceMaterialTransparency: true,
         elevation: 0,
@@ -20,9 +19,7 @@ class NotificationPage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {
-              // TODO: Go to notification page
-            },
+            onPressed: () {},
             icon: const Icon(
               Icons.notifications,
               size: 30,

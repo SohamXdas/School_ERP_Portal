@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:student/Global_widgets/buttons.dart';
@@ -21,6 +23,7 @@ class _AttendencePageState extends State<AttendencePage> {
       backgroundColor: const Color.fromRGBO(6, 11, 29, 1),
       endDrawer: const drawer(),
       appBar: AppBar(
+        forceMaterialTransparency: true,
         elevation: 0,
         title: const Text(
           'Attendence Report',
@@ -213,7 +216,7 @@ class _AttendencePageState extends State<AttendencePage> {
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),
-                                      //TODO: use the actuall attendence or syllabus data
+                                      // use the actuall attendence or syllabus data
                                     ),
                                   ],
                                 ),
@@ -286,7 +289,6 @@ class _AttendencePageState extends State<AttendencePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    //TODO set go to's
                     InkWell(
                       splashColor: Colors.white38,
                       radius: 90,

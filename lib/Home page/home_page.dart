@@ -507,7 +507,6 @@ class _HomepageState extends State<Homepage> {
                                             ),
                                           ),
                                         ),
-                                        // TODO Animations
                                         Center(
                                           child: Column(
                                             mainAxisAlignment: MainAxisAlignment.center,
@@ -525,7 +524,7 @@ class _HomepageState extends State<Homepage> {
                                               ),
                                             ],
                                           ),
-                                          //TODO: use the actuall attendence or syllabus data
+                                          // use the actuall attendence or syllabus data
                                         ),
                                       ],
                                     ),

@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:student/appbar_global/drawer_list.dart';
 import 'package:student/appbar_global/header_drawer.dart';

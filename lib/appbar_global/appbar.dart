@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 AppBar appbar() {
   return AppBar(
-    //TODO add forceMaterialTransparency: true, to all the app bars
     forceMaterialTransparency: true,
     elevation: 0,
     title: const Text(
@@ -12,7 +11,7 @@ AppBar appbar() {
     actions: [
       IconButton(
         onPressed: () {
-          // TODO: Go to notification page
+          // Go to notification page
         },
         icon: const Icon(
           Icons.notifications,

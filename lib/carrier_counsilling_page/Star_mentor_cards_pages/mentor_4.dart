@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:student/Global_widgets/buttons.dart';
+import 'package:student/limitted_access/limitted_access_page.dart';
 
 class Mentor4 extends StatelessWidget {
   const Mentor4({super.key});
@@ -68,7 +69,13 @@ class Mentor4 extends StatelessWidget {
               splashColor: const Color.fromARGB(204, 189, 189, 255),
               borderRadius: BorderRadius.circular(10),
               onTap: () {
-                //TODO go to page
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const LimitedAccessPage();
+                    },
+                  ),
+                );
               },
               child: const Button5(
                 txt: 'Book a Meeting',

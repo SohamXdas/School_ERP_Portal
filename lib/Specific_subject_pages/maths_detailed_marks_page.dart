@@ -1,7 +1,10 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:student/appbar_global/drawer.dart';
 import 'package:student/Global_widgets/graphs/performance_graphs.dart';
+import 'package:student/notification_page/notification_page.dart';
 
 class MathsMarksReportPage extends StatelessWidget {
   const MathsMarksReportPage({super.key});
@@ -10,8 +13,9 @@ class MathsMarksReportPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(6, 11, 29, 1),
-      endDrawer: drawer(),
+      endDrawer: const drawer(),
       appBar: AppBar(
+        forceMaterialTransparency: true,
         elevation: 0,
         title: const Text(
           'MathsMarksReportPage',
@@ -20,7 +24,13 @@ class MathsMarksReportPage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              // TODO: Go to notification page
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const NotificationPage();
+                  },
+                ),
+              );
             },
             icon: const Icon(
               Icons.notifications,

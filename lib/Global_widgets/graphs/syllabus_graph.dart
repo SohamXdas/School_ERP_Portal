@@ -56,7 +56,6 @@ class _syllabusGraphState extends State<syllabusGraph> {
               ),
             ),
           ),
-          // TODO Animations
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -74,7 +73,7 @@ class _syllabusGraphState extends State<syllabusGraph> {
                 ),
               ],
             ),
-            //TODO: use the actuall attendence or syllabus data
+            // use the actuall attendence or syllabus data
           ),
         ],
       ),

@@ -2,6 +2,7 @@
 
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:student/Global_widgets/buttons.dart';
 
 // import 'package:flutter_svg/svg.dart';
@@ -141,7 +142,6 @@ class _SillabusPageState extends State<SillabusPage> {
                                         ),
                                       ),
                                     ),
-                                    // TODO Animations
                                     Center(
                                       child: Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
@@ -159,7 +159,7 @@ class _SillabusPageState extends State<SillabusPage> {
                                           ),
                                         ],
                                       ),
-                                      //TODO: use the actuall attendence or syllabus data
+                                      // use the actuall attendence or syllabus data
                                     ),
                                   ],
                                 ),
@@ -268,7 +268,58 @@ class _SillabusPageState extends State<SillabusPage> {
                           splashColor: const Color.fromRGBO(136, 136, 255, 0.8),
                           borderRadius: BorderRadius.circular(8),
                           onTap: () {
-                            //TODO add footer widget
+                            showModalBottomSheet(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return SizedBox(
+                                  width: 10000,
+                                  height: 300,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      RatingBar.builder(
+                                        initialRating: 4,
+                                        minRating: 1,
+                                        itemPadding: const EdgeInsets.symmetric(horizontal: 6),
+                                        itemBuilder: (context, _) => const Icon(
+                                          Icons.star,
+                                          color: Color.fromRGBO(255, 215, 0, 1),
+                                        ),
+                                        onRatingUpdate: (rating) {},
+                                      ),
+                                      const SizedBox(
+                                        height: 20,
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        splashColor: const Color.fromRGBO(136, 136, 255, 0.8),
+                                        borderRadius: BorderRadius.circular(15),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: const Color.fromRGBO(136, 136, 255, 1),
+                                            borderRadius: BorderRadius.circular(12),
+                                          ),
+                                          height: 40,
+                                          width: 100,
+                                          child: const Center(
+                                            child: Text(
+                                              "Submit",
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.w700,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                            );
                           },
                           child: const Button2(
                             yesorno: 'Yes',
@@ -282,7 +333,58 @@ class _SillabusPageState extends State<SillabusPage> {
                           splashColor: const Color.fromRGBO(76, 79, 92, 1),
                           borderRadius: BorderRadius.circular(8),
                           onTap: () {
-                            //TODO add footer widget
+                            showModalBottomSheet(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return SizedBox(
+                                  width: 10000,
+                                  height: 300,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      RatingBar.builder(
+                                        initialRating: 2,
+                                        minRating: 1,
+                                        itemPadding: const EdgeInsets.symmetric(horizontal: 6),
+                                        itemBuilder: (context, _) => const Icon(
+                                          Icons.star,
+                                          color: Color.fromRGBO(255, 215, 0, 1),
+                                        ),
+                                        onRatingUpdate: (rating) {},
+                                      ),
+                                      const SizedBox(
+                                        height: 20,
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        splashColor: const Color.fromRGBO(136, 136, 255, 0.8),
+                                        borderRadius: BorderRadius.circular(15),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: const Color.fromRGBO(136, 136, 255, 1),
+                                            borderRadius: BorderRadius.circular(12),
+                                          ),
+                                          height: 40,
+                                          width: 100,
+                                          child: const Center(
+                                            child: Text(
+                                              "Submit",
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.w700,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                            );
                           },
                           child: const Button2(
                             yesorno: 'No',

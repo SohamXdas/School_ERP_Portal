@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:student/appbar_global/drawer.dart';
+import 'package:student/notification_page/notification_page.dart';
 // import 'package:student/Global_widgets/buttons.dart';
 // import 'package:student/Global_widgets/graphs/attencence_graph.dart';
 // import 'package:student/appbar_global/appbar.dart';
@@ -11,7 +12,7 @@ class QuestionBankPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(6, 11, 29, 1),
-      endDrawer: drawer(),
+      endDrawer: const drawer(),
       appBar: AppBar(
         forceMaterialTransparency: true,
         elevation: 0,
@@ -22,7 +23,13 @@ class QuestionBankPage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              // TODO: Go to notification page
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const NotificationPage();
+                  },
+                ),
+              );
             },
             icon: const Icon(
               Icons.notifications,

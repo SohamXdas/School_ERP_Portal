@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:student/appbar_global/drawer.dart';
+import 'package:student/notification_page/notification_page.dart';
 
 class LimitedAccessPage extends StatelessWidget {
   const LimitedAccessPage({super.key});
@@ -20,7 +21,13 @@ class LimitedAccessPage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              // TODO: Go to notification page
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const NotificationPage();
+                  },
+                ),
+              );
             },
             icon: const Icon(
               Icons.notifications,

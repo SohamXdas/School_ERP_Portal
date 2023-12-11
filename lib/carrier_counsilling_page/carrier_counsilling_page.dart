@@ -7,6 +7,7 @@ import 'package:student/carrier_counsilling_page/Star_mentor_cards_pages/mentor_
 import 'package:student/carrier_counsilling_page/Star_mentor_cards_pages/mentor_3.dart';
 import 'package:student/carrier_counsilling_page/Star_mentor_cards_pages/mentor_4.dart';
 import 'package:student/carrier_counsilling_page/Star_mentor_cards_pages/mentor_5.dart';
+import 'package:student/notification_page/notification_page.dart';
 
 class CarrierCounsilling extends StatelessWidget {
   CarrierCounsilling({super.key});
@@ -16,7 +17,7 @@ class CarrierCounsilling extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(6, 11, 29, 1),
-      endDrawer: drawer(),
+      endDrawer: const drawer(),
       appBar: AppBar(
         forceMaterialTransparency: true,
         elevation: 0,
@@ -27,7 +28,13 @@ class CarrierCounsilling extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              // TODO: Go to notification page
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const NotificationPage();
+                  },
+                ),
+              );
             },
             icon: const Icon(
               Icons.notifications,
