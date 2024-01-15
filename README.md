@@ -1,6 +1,6 @@
-# student
+# LeapSkkooL 
 
-A new Flutter project.
+LeapSkooL is an ERP portal specifically designed for schools to effectively manage their teachers, non-teaching staff, and students.
 
 ## Getting Started
 
